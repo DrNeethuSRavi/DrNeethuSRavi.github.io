@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Neethu S. Ravi — Polarimetric Imaging Researcher</title>
+<meta name="description" content="Portfolio of Dr. Neethu S. Ravi, PhD researcher in polarimetric imaging, computational imaging, and applied computer vision.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#0E1626;
+    --void-soft:#162132;
+    --paper:#FAF8F3;
+    --panel:#F2EFE6;
+    --ink:#1B2233;
+    --slate:#5B6478;
+    --cyan:#36C5C0;
+    --amber:#E2A33B;
+    --line:rgba(27,34,51,0.12);
+    --line-dark:rgba(255,255,255,0.14);
+    --maxw:1080px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.brand-name{font-family:'Space Grotesk', sans-serif; letter-spacing:-0.01em;}
+  .mono{font-family:'JetBrains Mono', monospace;}
+  a{color:inherit;}
+  img,svg{display:block; max-width:100%;}
+  ul{list-style:none; margin:0; padding:0;}
+  section{padding:96px 24px;}
+  .wrap{max-width:var(--maxw); margin:0 auto;}
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--cyan);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+  .skip-link{
+    position:absolute; left:-999px; top:0;
+    background:var(--cyan); color:var(--void); padding:8px 14px; z-index:200;
+  }
+  .skip-link:focus{left:12px; top:12px;}
+
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--slate);
+    margin:0 0 14px;
+  }
+  .void .eyebrow{color:rgba(255,255,255,0.55);}
+
+  /* ---------- mark / logo ---------- */
+  .mark{width:22px; height:22px; flex-shrink:0;}
+  .mark rect{fill:none; stroke:currentColor; stroke-width:1.4;}
+  .mark line{stroke:currentColor; stroke-width:1.4;}
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 24px;
+    color:#fff;
+    transition:background .3s ease, padding .3s ease, box-shadow .3s ease;
+  }
+  .nav.scrolled{
+    background:rgba(14,22,38,0.92);
+    backdrop-filter:blur(8px);
+    padding:12px 24px;
+    box-shadow:0 1px 0 var(--line-dark);
+  }
+  .brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:#fff;}
+  .brand-name{font-size:16px; font-weight:600;}
+  .nav-links{display:flex; gap:28px; font-size:14.5px;}
+  .nav-links a{text-decoration:none; opacity:0.82; transition:opacity .2s;}
+  .nav-links a:hover{opacity:1;}
+  .nav-toggle{display:none; background:none; border:0; color:#fff; cursor:pointer; padding:6px;}
+  .nav-toggle svg{width:22px; height:22px;}
+
+  @media (max-width:760px){
+    .nav-links{
+      position:fixed; top:0; right:0; height:100vh; width:min(78vw,300px);
+      background:var(--void); flex-direction:column; gap:0;
+      padding:88px 28px 28px; transform:translateX(100%);
+      transition:transform .35s ease; font-size:17px;
+    }
+    .nav-links a{padding:14px 0; border-bottom:1px solid var(--line-dark); opacity:1;}
+    .nav-links.open{transform:translateX(0);}
+    .nav-toggle{display:block;}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:var(--void);
+    color:#fff;
+    padding:168px 24px 110px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(60% 50% at 85% 10%, rgba(54,197,192,0.16), transparent 60%),
+      radial-gradient(40% 40% at 8% 90%, rgba(226,163,59,0.12), transparent 60%);
+    pointer-events:none;
+  }
+  .hero .wrap{position:relative;}
+
+  .hero-name-wrap{
+    position:relative;
+    margin:0 0 22px;
+    font-size:clamp(36px,6.4vw,64px);
+    font-weight:700;
+    line-height:1.05;
+  }
+  .hero-name{opacity:1;}
+  .ghost{display:none;}
+
+  @media (prefers-reduced-motion:no-preference){
+    .hero-name{opacity:0; animation:reveal 0.01s 1.05s forwards;}
+    .ghost{
+      display:block; position:absolute; inset:0;
+      filter:blur(3px); opacity:0.55;
+    }
+    .ghost-a{color:var(--cyan); transform:translate(-7px,-5px); animation:converge 1.05s 0s cubic-bezier(.2,.7,.2,1) forwards;}
+    .ghost-b{color:var(--amber); transform:translate(7px,5px); animation:converge 1.05s .04s cubic-bezier(.2,.7,.2,1) forwards;}
+    .ghost-c{color:#fff; transform:translate(-5px,6px); animation:converge 1.05s .08s cubic-bezier(.2,.7,.2,1) forwards;}
+    .ghost-d{color:var(--cyan); transform:translate(6px,-6px); animation:converge 1.05s .12s cubic-bezier(.2,.7,.2,1) forwards;}
+    @keyframes converge{
+      0%{opacity:0.55; filter:blur(3px);}
+      85%{opacity:0.25; filter:blur(0.5px);}
+      100%{opacity:0; filter:blur(0); transform:translate(0,0);}
+    }
+    @keyframes reveal{ to{opacity:1;} }
+  }
+
+  .hero-tagline{
+    font-family:'Source Serif 4', serif;
+    font-size:clamp(17px,2vw,21px);
+    max-width:680px;
+    color:rgba(255,255,255,0.86);
+    margin:0 0 28px;
+  }
+  .hero-meta{
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    color:rgba(255,255,255,0.6);
+    display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    margin-bottom:40px;
+  }
+  .hero-meta .dot{opacity:0.5;}
+
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 22px; border-radius:3px;
+    font-family:'Space Grotesk', sans-serif; font-size:14.5px; font-weight:600;
+    text-decoration:none; border:1px solid transparent; cursor:pointer;
+    transition:transform .15s ease, background .2s ease, border-color .2s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--cyan); color:var(--void);}
+  .btn-primary:hover{background:#46d6d1;}
+  .btn-ghost{border-color:rgba(255,255,255,0.3); color:#fff;}
+  .btn-ghost:hover{border-color:rgba(255,255,255,0.7);}
+
+  /* ---------- generic headings ---------- */
+  h2{font-size:clamp(26px,3.4vw,36px); line-height:1.2; margin:0 0 20px; font-weight:600;}
+  .lede{font-size:18.5px; max-width:680px; color:var(--ink); text-align:justify; text-justify:inter-word;}
+
+  /* ---------- about ---------- */
+  .skills{
+    display:flex; flex-wrap:wrap; gap:10px;
+    margin-top:32px;
+  }
+  .skills li{
+    font-family:'JetBrains Mono', monospace; font-size:13px;
+    padding:8px 14px; border:1px solid var(--line); border-radius:20px;
+    color:var(--slate); background:var(--panel);
+  }
+
+  /* ---------- research ---------- */
+  .research{background:var(--panel);}
+  .research-diagram{
+    display:flex; justify-content:center;
+    margin-top:40px;
+  }
+  .diagram-cap{
+    font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--slate);
+    text-align:center; margin-top:14px;
+  }
+
+
+  /* ---------- timeline ---------- */
+  .timeline{position:relative; margin-top:40px;}
+  .timeline li{
+    padding:0 0 44px 28px;
+    border-left:1px solid var(--line);
+    position:relative;
+  }
+  .timeline li:last-child{padding-bottom:0;}
+  .timeline li::before{
+    content:""; position:absolute; left:-4.5px; top:4px;
+    width:8px; height:8px; border-radius:50%; background:var(--cyan);
+  }
+  .timeline-date{font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--slate); margin:0 0 6px;}
+  .timeline h3{margin:0 0 2px; font-size:20px;}
+  .timeline-org{margin:0 0 14px; color:var(--slate); font-size:15px;}
+  .timeline ul{margin-top:4px;}
+  .timeline ul li{
+    border-left:none; padding:0; margin-bottom:8px; padding-left:0;
+    font-size:15.5px; position:relative;
+  }
+  .timeline ul li::before{display:none;}
+  .timeline ul li::after{content:"—"; color:var(--slate); margin-right:8px;}
+
+  /* ---------- education ---------- */
+  .education{background:var(--panel);}
+  .ed-grid{display:grid; gap:24px; margin-top:36px;}
+  .ed-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:6px; padding:26px 28px;
+  }
+  .ed-degree{font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:18px; margin:0 0 4px;}
+  .ed-school{margin:0 0 4px; color:var(--slate);}
+  .ed-meta{font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--slate); margin:0 0 12px;}
+  .ed-thesis{font-size:15px; margin:0; color:var(--ink);}
+
+  /* ---------- publications ---------- */
+  .pub-list{margin-top:36px;}
+  .pub-list li{padding:24px 0; border-bottom:1px solid var(--line);}
+  .pub-list li:first-child{padding-top:0;}
+  .pub-title{font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:17.5px; margin:0 0 8px;}
+  .pub-cite{font-size:15px; color:var(--slate); margin:0;}
+  .pub-links{margin-top:24px; font-size:15px; color:var(--slate);}
+  .pub-links a{text-decoration:underline; text-decoration-color:var(--line);}
+
+  /* ---------- certifications + achievements ---------- */
+  .more-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+  .more-grid h3{font-size:14px; margin:0 0 18px;}
+  .more-grid ul li{
+    padding:12px 0; border-bottom:1px solid var(--line); font-size:15.5px;
+  }
+  .more-grid ul li:last-child{border-bottom:none;}
+  @media (max-width:760px){.more-grid{grid-template-columns:1fr; gap:36px;}}
+
+  /* ---------- footer / contact ---------- */
+  .contact{background:var(--void); color:#fff;}
+  .contact h2{max-width:620px; color:#fff;}
+  .contact-grid{
+    display:flex; flex-wrap:wrap; gap:28px;
+    margin:36px 0 56px;
+    font-family:'JetBrains Mono', monospace; font-size:14px;
+  }
+  .contact-grid a{text-decoration:none; border-bottom:1px solid var(--line-dark); padding-bottom:4px;}
+  .contact-grid a:hover{border-color:var(--cyan);}
+  .contact-grid span{color:rgba(255,255,255,0.55);}
+  .footer-note{
+    font-family:'JetBrains Mono', monospace; font-size:12.5px;
+    color:rgba(255,255,255,0.4); border-top:1px solid var(--line-dark); padding-top:24px;
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top">
+    <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="1" y="1" width="10" height="10"/>
+      <rect x="13" y="1" width="10" height="10"/>
+      <rect x="1" y="13" width="10" height="10"/>
+      <rect x="13" y="13" width="10" height="10"/>
+      <line x1="3" y1="6" x2="9" y2="6"/>
+      <line x1="18" y1="3" x2="18" y2="9"/>
+      <line x1="3" y1="15" x2="9" y2="19"/>
+      <line x1="15" y1="15" x2="21" y2="19"/>
+    </svg>
+    <span class="brand-name">Neethu S. Ravi</span>
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#future-research">Future Research</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#publications">Publications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="wrap">
+      <p class="eyebrow">PhD · Electronics &amp; Communication Engineering</p>
+      <h1 class="hero-name-wrap">
+        <span class="ghost ghost-a" aria-hidden="true">Dr. Neethu S. Ravi</span>
+        <span class="ghost ghost-b" aria-hidden="true">Dr. Neethu S. Ravi</span>
+        <span class="ghost ghost-c" aria-hidden="true">Dr. Neethu S. Ravi</span>
+        <span class="ghost ghost-d" aria-hidden="true">Dr. Neethu S. Ravi</span>
+        <span class="hero-name">Dr. Neethu S. Ravi</span>
+      </h1>
+      <p class="hero-tagline">Computational imaging researcher specializing in polarimetric sensing, image reconstruction, and AI-driven imaging systems, developing advanced algorithms at the intersection of imaging physics, signal processing, and artificial intelligence, with a passion for translating fundamental research into impactful real-world applications.</p>
+      <p class="hero-meta">
+        <span>Abu Dhabi, UAE</span><span class="dot">•</span>
+        <span>7+ years in computational imaging</span><span class="dot">•</span>
+        <span>MATLAB &amp; Python</span>
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#publications">View publications</a>
+        <a class="btn btn-ghost" href="mailto:drneethusravi@gmail.com">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <p class="eyebrow">About</p>
+      <p class="lede">I am a researcher in computational imaging and polarimetric imaging with over seven years of experience in developing image reconstruction and resolution enhancement algorithms for advanced imaging systems. My research focuses on bridging signal processing, imaging physics, and computational methods to address challenges in polarization-sensitive imaging, image restoration, and information extraction from complex visual data.</p>
+      <p class="lede">During my doctoral research at Amrita Vishwa Vidyapeetham, I developed novel digital super-resolution techniques for division-of-focal-plane polarimeters based on the Generalized Sampling Theorem, enabling improved spatial resolution without modifications to imaging hardware. My work has resulted in publications in leading journals including IEEE Signal Processing Letters and the Journal of the Optical Society of America B, and has been conducted in collaboration with researchers at the University of Dayton, USA.</p>
+      <p class="lede">My broader interests lie in computational imaging, inverse problems, machine learning for imaging systems, and the development of intelligent imaging solutions that combine physical modeling with data-driven approaches. I am particularly interested in translating fundamental research into practical technologies for scientific, industrial, and real-world imaging applications.</p>
+      <ul class="skills">
+        <li>Polarimetric Imaging</li>
+        <li>Computational Imaging</li>
+        <li>Super-Resolution</li>
+        <li>Applied Computer Vision</li>
+        <li>Machine Learning</li>
+        <li>Fourier Optics</li>
+        <li>Algorithm Design</li>
+        <li>MATLAB</li>
+        <li>Python</li>
+        <li>Data Analysis</li>
+        <li>Research &amp; Development</li>
+        <li>Project Leadership</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="research" id="research">
+    <div class="wrap">
+      <p class="eyebrow">Research Focus</p>
+      <h2>Digital Super-Resolution</h2>
+      <p class="lede">Polarimetric imaging provides information beyond conventional intensity imaging by measuring the polarization state of light, enabling enhanced characterization of materials, surfaces, and scenes. This additional information has applications in remote sensing, surveillance, biomedical imaging, industrial inspection, and autonomous sensing. However, many polarimetric imaging systems suffer from reduced spatial resolution due to the way polarization information is acquired at the sensor level.</p>
+      <p class="lede">My research focuses on developing computational imaging techniques to overcome these limitations and improve the quality of polarimetric imagery. In particular, I developed a novel Generalized Sampling Theorem (GST)-based digital super-resolution framework that reconstructs high-resolution images from multiple low-resolution observations. The work combines signal processing theory, mathematical modeling, and image reconstruction techniques to recover spatial detail while preserving polarization information.</p>
+      <p class="lede">Through this research, I aim to advance the capabilities of next-generation imaging systems by integrating computational methods with imaging physics, enabling improved image quality and information extraction without requiring modifications to the underlying hardware.</p>
+      <div class="research-diagram">
+        <div>
+          <svg viewBox="0 0 460 200" role="img" aria-label="Diagram: four polarization-angle channels at 0, 45, 90 and 135 degrees combine into one higher-resolution reconstructed image">
+            <defs>
+              <pattern id="h0" width="10" height="10" patternUnits="userSpaceOnUse">
+                <line x1="0" y1="5" x2="10" y2="5" stroke="#1B2233" stroke-opacity="0.4" stroke-width="1.6"/>
+              </pattern>
+              <pattern id="h45" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <line x1="0" y1="5" x2="10" y2="5" stroke="#1B2233" stroke-opacity="0.4" stroke-width="1.6"/>
+              </pattern>
+              <pattern id="h90" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(90)">
+                <line x1="0" y1="5" x2="10" y2="5" stroke="#1B2233" stroke-opacity="0.4" stroke-width="1.6"/>
+              </pattern>
+              <pattern id="h135" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(135)">
+                <line x1="0" y1="5" x2="10" y2="5" stroke="#1B2233" stroke-opacity="0.4" stroke-width="1.6"/>
+              </pattern>
+              <pattern id="hMerged" width="6" height="6" patternUnits="userSpaceOnUse">
+                <line x1="0" y1="3" x2="6" y2="3" stroke="#36C5C0" stroke-width="1.3"/>
+                <line x1="3" y1="0" x2="3" y2="6" stroke="#36C5C0" stroke-width="1.3"/>
+              </pattern>
+            </defs>
+
+            <g>
+              <rect x="0" y="0" width="68" height="68" rx="5" fill="#FAF8F3" stroke="#1B2233" stroke-opacity="0.18"/>
+              <rect x="4" y="4" width="60" height="60" rx="3" fill="url(#h0)"/>
+              <text x="34" y="86" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#5B6478">0°</text>
+            </g>
+            <g transform="translate(80,0)">
+              <rect x="0" y="0" width="68" height="68" rx="5" fill="#FAF8F3" stroke="#1B2233" stroke-opacity="0.18"/>
+              <rect x="4" y="4" width="60" height="60" rx="3" fill="url(#h45)"/>
+              <text x="34" y="86" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#5B6478">45°</text>
+            </g>
+            <g transform="translate(0,96)">
+              <rect x="0" y="0" width="68" height="68" rx="5" fill="#FAF8F3" stroke="#1B2233" stroke-opacity="0.18"/>
+              <rect x="4" y="4" width="60" height="60" rx="3" fill="url(#h90)"/>
+              <text x="34" y="86" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#5B6478">90°</text>
+            </g>
+            <g transform="translate(80,96)">
+              <rect x="0" y="0" width="68" height="68" rx="5" fill="#FAF8F3" stroke="#1B2233" stroke-opacity="0.18"/>
+              <rect x="4" y="4" width="60" height="60" rx="3" fill="url(#h135)"/>
+              <text x="34" y="86" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#5B6478">135°</text>
+            </g>
+
+            <path d="M168 96 L208 96" stroke="#5B6478" stroke-width="1.5" marker-end="url(#arrow)"/>
+            <defs>
+              <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                <path d="M0,0 L8,4 L0,8 Z" fill="#5B6478"/>
+              </marker>
+            </defs>
+
+            <g transform="translate(228,18)">
+              <rect x="0" y="0" width="160" height="160" rx="6" fill="#FAF8F3" stroke="#36C5C0" stroke-opacity="0.6"/>
+              <rect x="6" y="6" width="148" height="148" rx="3" fill="url(#hMerged)"/>
+              <text x="80" y="178" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#36C5C0">reconstructed</text>
+            </g>
+          </svg>
+          <p class="diagram-cap">Four polarization channels (0°, 45°, 90°, 135°) reconstructed into one higher-resolution image</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="future-research">
+    <div class="wrap">
+      <p class="eyebrow">Future Research</p>
+      <h2>Future Research</h2>
+      <p class="lede">My future research aims to advance the capabilities of next-generation imaging systems through the integration of computational imaging, intelligent reconstruction methods, and emerging data-driven technologies. Building upon my work in polarimetric imaging and image reconstruction, I am interested in exploring approaches that improve image quality, information recovery, and decision-making in challenging imaging environments.</p>
+      <p class="lede">A key objective is to develop scalable and adaptable imaging frameworks that combine physical understanding of image formation with modern computational techniques. These efforts are directed toward creating robust solutions for scientific imaging, autonomous sensing, remote observation, industrial inspection, and other applications where extracting reliable information from limited or degraded measurements is critical.</p>
+      <p class="lede">Through interdisciplinary collaboration, I seek to contribute to the development of advanced imaging technologies that are both theoretically grounded and practically deployable across a wide range of real-world scenarios.</p>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <p class="eyebrow">Experience</p>
+      <h2>Professional Experience</h2>
+      <ol class="timeline">
+        <li>
+          <p class="timeline-date mono">2021 — 2025</p>
+          <h3>Research Assistant</h3>
+          <p class="timeline-org">Amrita Vishwa Vidyapeetham</p>
+          <ul>
+            <li>Led applied research on digital super-resolution algorithms for polarimetric imaging</li>
+            <li>Developed AI-based computer vision models for RGB microgrid polarimeter imagery</li>
+            <li>Collaborated with the University of Dayton, Ohio, on microgrid polarimeter imaging projects</li>
+            <li>Mentored students and supported teaching-assistantship programs</li>
+            <li>Published in IEEE Signal Processing Letters and the Journal of the Optical Society of America B</li>
+          </ul>
+        </li>
+        <li>
+          <p class="timeline-date mono">2018 — 2022</p>
+          <h3>Faculty Assistant</h3>
+          <p class="timeline-org">Amrita Vishwa Vidyapeetham</p>
+          <ul>
+            <li>Taught image and signal processing coursework for undergraduate programs</li>
+            <li>Supported project-based learning integrating AI and MATLAB-driven modeling</li>
+          </ul>
+        </li>
+        <li>
+          <p class="timeline-date mono">2017 — 2018</p>
+          <h3>Faculty Assistant — AICTE Postgraduate Program</h3>
+          <ul>
+            <li>Assisted postgraduate labs and coursework focused on machine learning applications</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="education" id="education">
+    <div class="wrap">
+      <p class="eyebrow">Education</p>
+      <h2>Education</h2>
+      <div class="ed-grid">
+        <article class="ed-card">
+          <p class="ed-degree">Ph.D., Electronics &amp; Communication Engineering</p>
+          <p class="ed-school">Amrita Vishwa Vidyapeetham, India</p>
+          <p class="ed-meta mono">2018 – 2025 · CGPA 8.76</p>
+          <p class="ed-thesis">Thesis: A novel method for resolution enhancement in division-of-focal-plane polarimetry, using a generalized sampling theorem-based digital super-resolution approach.</p>
+        </article>
+        <article class="ed-card">
+          <p class="ed-degree">M.Tech, Electronics &amp; Communication Engineering (Signal Processing)</p>
+          <p class="ed-school">University of Kerala, India</p>
+          <p class="ed-meta mono">2014 – 2016 · CGPA 9.08 · University rank holder</p>
+          <p class="ed-thesis">Thesis: An improved method to detect common cardiac disorders from ECG signals using artificial neural networks and fuzzy logic.</p>
+        </article>
+        <article class="ed-card">
+          <p class="ed-degree">B.Tech, Electronics &amp; Communication Engineering</p>
+          <p class="ed-school">University of Kerala, India</p>
+          <p class="ed-meta mono">2010 – 2014 · CGPA 7.51</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="wrap">
+      <p class="eyebrow">Publications</p>
+      <h2>Publications</h2>
+      <ol class="pub-list">
+        <li>
+          <p class="pub-title">Comparative study of generalized-sampling-theorem-based digital super-resolution for 2D data</p>
+          <p class="pub-cite">Neethu S. Ravi, Rakesh Kumar, Bradley M. Ratliff — Journal of the Optical Society of America B, 42(1), 7–17, 2024</p>
+        </li>
+        <li>
+          <p class="pub-title">A digital super-resolution method with minimal sensitivity to shift estimation error</p>
+          <p class="pub-cite">Neethu S. Ravi, Rakesh Kumar, Bradley M. Ratliff — IEEE Signal Processing Letters, 31, 2700–2704, 2024</p>
+        </li>
+        <li>
+          <p class="pub-title">A modular approach to finer classification of ECG signals</p>
+          <p class="pub-cite">Neethu S. Ravi, P. Thomas — International Journal of Advanced Research in Electrical, Electronics and Instrumentation Engineering, 2016</p>
+        </li>
+        <li>
+          <p class="pub-title">An improved method to detect common cardiac disorders from ECG signals using artificial neural network and fuzzy logic</p>
+          <p class="pub-cite">Neethu S. Ravi, P. Thomas — IJRECE, 4(3), 24–28, 2016</p>
+        </li>
+        <li>
+          <p class="pub-title">Improved method to detect common cardiac disorders from ECG signals using ANN and fuzzy logic</p>
+          <p class="pub-cite">Neethu S. Ravi, P. Thomas — International Journal of Advanced Research in Electrical, Electronics and Instrumentation Engineering, 2016</p>
+        </li>
+      </ol>
+      <p class="pub-links">Full record on <a href="https://scholar.google.com/citations?user=TRSeAskAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> · ORCID <span class="mono">0009-0003-7696-9520</span> · Scopus ID <span class="mono">59351120100</span></p>
+    </div>
+  </section>
+
+  <section id="more">
+    <div class="wrap more-grid">
+      <div>
+        <p class="eyebrow">Certifications</p>
+        <ul>
+          <li>British Council English Score — Core Skills Test, B2 Upper Intermediate (IELTS Band 6.5–7)</li>
+          <li>Introduction to Artificial Intelligence — Coursera</li>
+          <li>Machine Learning Onramp — MathWorks Training Services</li>
+          <li>Image Processing Onramp — MathWorks Training Services</li>
+          <li>Python Programming for AI and ML — NIT Warangal</li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow">Achievements</p>
+        <ul>
+          <li>Ph.D. Scholars Fellowship 2025 — Amrita Scholarships &amp; Fellowships for International Education &amp; Research</li>
+          <li>University Rank Holder, M.Tech Signal Processing Program</li>
+          <li>Appreciation for M.Tech project presentation during NAAC accreditation visit</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2>Let's talk about imaging, algorithms, or where they meet industry.</h2>
+    <div class="contact-grid">
+      <a href="mailto:drneethusravi@gmail.com">drneethusravi@gmail.com</a>
+      <a href="tel:+971528323445">+971 52 832 3445</a>
+      <a href="https://www.linkedin.com/in/neethusravi" target="_blank" rel="noopener">LinkedIn</a>
+      <span>Abu Dhabi, UAE</span>
+    </div>
+    <p class="footer-note">© 2026 Neethu S. Ravi.</p>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 12);
+  }, { passive: true });
+
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', false);
+    });
+  });
+</script>
+
+</body>
+</html>
