@@ -1,3 +1,5 @@
+
+Index · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +24,7 @@
     --line-dark:rgba(255,255,255,0.14);
     --maxw:1080px;
   }
-
+ 
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
@@ -41,7 +43,7 @@
   ul{list-style:none; margin:0; padding:0;}
   section{padding:96px 24px;}
   .wrap{max-width:var(--maxw); margin:0 auto;}
-
+ 
   a:focus-visible, button:focus-visible{
     outline:2px solid var(--cyan);
     outline-offset:3px;
@@ -52,7 +54,7 @@
     background:var(--cyan); color:var(--void); padding:8px 14px; z-index:200;
   }
   .skip-link:focus{left:12px; top:12px;}
-
+ 
   .eyebrow{
     font-family:'JetBrains Mono', monospace;
     font-size:12.5px;
@@ -62,12 +64,12 @@
     margin:0 0 14px;
   }
   .void .eyebrow{color:rgba(255,255,255,0.55);}
-
+ 
   /* ---------- mark / logo ---------- */
   .mark{width:22px; height:22px; flex-shrink:0;}
   .mark rect{fill:none; stroke:currentColor; stroke-width:1.4;}
   .mark line{stroke:currentColor; stroke-width:1.4;}
-
+ 
   /* ---------- nav ---------- */
   .nav{
     position:fixed; top:0; left:0; right:0; z-index:100;
@@ -89,7 +91,7 @@
   .nav-links a:hover{opacity:1;}
   .nav-toggle{display:none; background:none; border:0; color:#fff; cursor:pointer; padding:6px;}
   .nav-toggle svg{width:22px; height:22px;}
-
+ 
   @media (max-width:760px){
     .nav-links{
       position:fixed; top:0; right:0; height:100vh; width:min(78vw,300px);
@@ -101,7 +103,7 @@
     .nav-links.open{transform:translateX(0);}
     .nav-toggle{display:block;}
   }
-
+ 
   /* ---------- hero ---------- */
   .hero{
     background:var(--void);
@@ -119,7 +121,7 @@
     pointer-events:none;
   }
   .hero .wrap{position:relative;}
-
+ 
   .hero-name-wrap{
     position:relative;
     margin:0 0 22px;
@@ -129,7 +131,7 @@
   }
   .hero-name{opacity:1;}
   .ghost{display:none;}
-
+ 
   @media (prefers-reduced-motion:no-preference){
     .hero-name{opacity:0; animation:reveal 0.01s 1.05s forwards;}
     .ghost{
@@ -147,7 +149,7 @@
     }
     @keyframes reveal{ to{opacity:1;} }
   }
-
+ 
   .hero-tagline{
     font-family:'Source Serif 4', serif;
     font-size:clamp(17px,2vw,21px);
@@ -163,7 +165,7 @@
     margin-bottom:40px;
   }
   .hero-meta .dot{opacity:0.5;}
-
+ 
   .hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
   .btn{
     display:inline-flex; align-items:center; gap:8px;
@@ -177,11 +179,11 @@
   .btn-primary:hover{background:#46d6d1;}
   .btn-ghost{border-color:rgba(255,255,255,0.3); color:#fff;}
   .btn-ghost:hover{border-color:rgba(255,255,255,0.7);}
-
+ 
   /* ---------- generic headings ---------- */
   h2{font-size:clamp(26px,3.4vw,36px); line-height:1.2; margin:0 0 20px; font-weight:600;}
   .lede{font-size:18.5px; max-width:680px; color:var(--ink); text-align:justify; text-justify:inter-word;}
-
+ 
   /* ---------- about ---------- */
   .skills{
     display:flex; flex-wrap:wrap; gap:10px;
@@ -192,7 +194,7 @@
     padding:8px 14px; border:1px solid var(--line); border-radius:20px;
     color:var(--slate); background:var(--panel);
   }
-
+ 
   /* ---------- research ---------- */
   .research{background:var(--panel);}
   .research-diagram{
@@ -203,8 +205,8 @@
     font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--slate);
     text-align:center; margin-top:14px;
   }
-
-
+ 
+ 
   /* ---------- timeline ---------- */
   .timeline{position:relative; margin-top:40px;}
   .timeline li{
@@ -227,7 +229,7 @@
   }
   .timeline ul li::before{display:none;}
   .timeline ul li::after{content:"—"; color:var(--slate); margin-right:8px;}
-
+ 
   /* ---------- education ---------- */
   .education{background:var(--panel);}
   .ed-grid{display:grid; gap:24px; margin-top:36px;}
@@ -238,7 +240,7 @@
   .ed-school{margin:0 0 4px; color:var(--slate);}
   .ed-meta{font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--slate); margin:0 0 12px;}
   .ed-thesis{font-size:15px; margin:0; color:var(--ink);}
-
+ 
   /* ---------- publications ---------- */
   .pub-list{margin-top:36px;}
   .pub-list li{padding:24px 0; border-bottom:1px solid var(--line);}
@@ -247,7 +249,7 @@
   .pub-cite{font-size:15px; color:var(--slate); margin:0;}
   .pub-links{margin-top:24px; font-size:15px; color:var(--slate);}
   .pub-links a{text-decoration:underline; text-decoration-color:var(--line);}
-
+ 
   /* ---------- certifications + achievements ---------- */
   .more-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
   .more-grid h3{font-size:14px; margin:0 0 18px;}
@@ -256,7 +258,7 @@
   }
   .more-grid ul li:last-child{border-bottom:none;}
   @media (max-width:760px){.more-grid{grid-template-columns:1fr; gap:36px;}}
-
+ 
   /* ---------- footer / contact ---------- */
   .contact{background:var(--void); color:#fff;}
   .contact h2{max-width:620px; color:#fff;}
@@ -275,9 +277,9 @@
 </style>
 </head>
 <body>
-
+ 
 <a class="skip-link" href="#main">Skip to content</a>
-
+ 
 <header class="nav" id="nav">
   <a class="brand" href="#top">
     <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
@@ -299,15 +301,16 @@
     <a href="#experience">Experience</a>
     <a href="#education">Education</a>
     <a href="#publications">Publications</a>
+    <a href="#service">Reviewer</a>
     <a href="#contact">Contact</a>
   </nav>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
   </button>
 </header>
-
+ 
 <main id="main">
-
+ 
   <section class="hero" id="top">
     <div class="wrap">
       <p class="eyebrow">PhD · Electronics &amp; Communication Engineering</p>
@@ -330,7 +333,7 @@
       </div>
     </div>
   </section>
-
+ 
   <section id="about">
     <div class="wrap">
       <p class="eyebrow">About</p>
@@ -353,7 +356,7 @@
       </ul>
     </div>
   </section>
-
+ 
   <section class="research" id="research">
     <div class="wrap">
       <p class="eyebrow">Research Focus</p>
@@ -382,7 +385,7 @@
                 <line x1="3" y1="0" x2="3" y2="6" stroke="#36C5C0" stroke-width="1.3"/>
               </pattern>
             </defs>
-
+ 
             <g>
               <rect x="0" y="0" width="68" height="68" rx="5" fill="#FAF8F3" stroke="#1B2233" stroke-opacity="0.18"/>
               <rect x="4" y="4" width="60" height="60" rx="3" fill="url(#h0)"/>
@@ -403,14 +406,14 @@
               <rect x="4" y="4" width="60" height="60" rx="3" fill="url(#h135)"/>
               <text x="34" y="86" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#5B6478">135°</text>
             </g>
-
+ 
             <path d="M168 96 L208 96" stroke="#5B6478" stroke-width="1.5" marker-end="url(#arrow)"/>
             <defs>
               <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
                 <path d="M0,0 L8,4 L0,8 Z" fill="#5B6478"/>
               </marker>
             </defs>
-
+ 
             <g transform="translate(228,18)">
               <rect x="0" y="0" width="160" height="160" rx="6" fill="#FAF8F3" stroke="#36C5C0" stroke-opacity="0.6"/>
               <rect x="6" y="6" width="148" height="148" rx="3" fill="url(#hMerged)"/>
@@ -422,7 +425,7 @@
       </div>
     </div>
   </section>
-
+ 
   <section id="future-research">
     <div class="wrap">
       <p class="eyebrow">Future Research</p>
@@ -432,7 +435,7 @@
       <p class="lede">Through interdisciplinary collaboration, I seek to contribute to the development of advanced imaging technologies that are both theoretically grounded and practically deployable across a wide range of real-world scenarios.</p>
     </div>
   </section>
-
+ 
   <section id="experience">
     <div class="wrap">
       <p class="eyebrow">Experience</p>
@@ -469,7 +472,7 @@
       </ol>
     </div>
   </section>
-
+ 
   <section class="education" id="education">
     <div class="wrap">
       <p class="eyebrow">Education</p>
@@ -495,7 +498,7 @@
       </div>
     </div>
   </section>
-
+ 
   <section id="publications">
     <div class="wrap">
       <p class="eyebrow">Publications</p>
@@ -525,7 +528,28 @@
       <p class="pub-links">Full record on <a href="https://scholar.google.com/citations?user=TRSeAskAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> · ORCID <span class="mono">0009-0003-7696-9520</span> · Scopus ID <span class="mono">59351120100</span></p>
     </div>
   </section>
-
+ 
+  <section id="service">
+    <div class="wrap">
+      <p class="eyebrow">Professional Service</p>
+      <h2>Reviewer</h2>
+      <ol class="timeline">
+        <li>
+          <p class="timeline-date mono">2025 – 2026</p>
+          <h3>IEEE International Symposium on Biomedical Imaging (ISBI)</h3>
+          <p class="timeline-org">IEEE Signal Processing Society</p>
+          <p style="font-size:15.5px; margin:0;">Certified reviewer for the 22nd ISBI 2025 and 23rd ISBI 2026 — certified by EDAS Conference Services.</p>
+        </li>
+        <li>
+          <p class="timeline-date mono">Ongoing</p>
+          <h3>Optica Publishing Group (OSA) Journals</h3>
+          <p class="timeline-org">Optica Publishing Group</p>
+          <p style="font-size:15.5px; margin:0;">Certified reviewer for publications of the Optical Society of America (OSA / Optica).</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+ 
   <section id="more">
     <div class="wrap more-grid">
       <div>
@@ -548,9 +572,9 @@
       </div>
     </div>
   </section>
-
+ 
 </main>
-
+ 
 <footer class="contact" id="contact">
   <div class="wrap">
     <p class="eyebrow">Contact</p>
@@ -564,13 +588,13 @@
     <p class="footer-note">© 2026 Neethu S. Ravi.</p>
   </div>
 </footer>
-
+ 
 <script>
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 12);
   }, { passive: true });
-
+ 
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
   toggle.addEventListener('click', () => {
@@ -584,6 +608,6 @@
     });
   });
 </script>
-
+ 
 </body>
 </html>
