@@ -1,560 +1,553 @@
-
-Index · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Neethu S. Ravi — Polarimetric Imaging Researcher</title>
-<meta name="description" content="Portfolio of Dr. Neethu S. Ravi, PhD researcher in polarimetric imaging, computational imaging, and applied computer vision.">
+<title>Dr. Neethu S. Ravi</title>
+<meta name="description" content="Dr. Neethu S. Ravi — PhD researcher in polarimetric imaging, computational imaging, and applied computer vision.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --void:#0E1626;
-    --void-soft:#162132;
-    --paper:#FAF8F3;
-    --panel:#F2EFE6;
-    --ink:#1B2233;
-    --slate:#5B6478;
-    --cyan:#36C5C0;
-    --amber:#E2A33B;
-    --line:rgba(27,34,51,0.12);
-    --line-dark:rgba(255,255,255,0.14);
-    --maxw:1080px;
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --white: #f5f3ee;
+    --bg: #eceae3;
+    --ink: #1a1a2e;
+    --mid: #3a3a5c;
+    --muted: #7a7a9a;
+    --accent: #1e3a6e;
+    --accent-hover: #152c55;
+    --border: #d8d6cc;
+    --navy: #0f1e3d;
+    --navy-soft: #16294f;
+    --pale: #f5f3ee;
+    --maxw: 860px;
   }
- 
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Source Serif 4', Georgia, serif;
-    font-size:17px;
-    line-height:1.65;
-    -webkit-font-smoothing:antialiased;
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: var(--ink);
+    background: var(--pale);
+    -webkit-font-smoothing: antialiased;
   }
-  h1,h2,h3,.brand-name{font-family:'Space Grotesk', sans-serif; letter-spacing:-0.01em;}
-  .mono{font-family:'JetBrains Mono', monospace;}
-  a{color:inherit;}
-  img,svg{display:block; max-width:100%;}
-  ul{list-style:none; margin:0; padding:0;}
-  section{padding:96px 24px;}
-  .wrap{max-width:var(--maxw); margin:0 auto;}
- 
-  a:focus-visible, button:focus-visible{
-    outline:2px solid var(--cyan);
-    outline-offset:3px;
-    border-radius:2px;
+  .about-section {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-soft) 55%, #2a3f6e 100%);
+    margin: 0 -24px;
+    padding: 52px 24px 44px;
+    border-radius: 0 0 8px 8px;
   }
-  .skip-link{
-    position:absolute; left:-999px; top:0;
-    background:var(--cyan); color:var(--void); padding:8px 14px; z-index:200;
+  .about-name { color: #ffffff !important; }
+  .about-title { color: rgba(255,255,255,0.68) !important; }
+  .social-links a { color: rgba(255,255,255,0.75) !important; }
+  .social-links a:hover { color: #7eb8f7 !important; }
+  .about-contact { color: rgba(255,255,255,0.68) !important; }
+  .about-bio p { color: rgba(255,255,255,0.88) !important; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; color: var(--accent-hover); }
+
+  /* nav */
+  .site-nav {
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    background: var(--navy);
+    position: sticky; top: 0; z-index: 50;
   }
-  .skip-link:focus{left:12px; top:12px;}
- 
-  .eyebrow{
-    font-family:'JetBrains Mono', monospace;
-    font-size:12.5px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--slate);
-    margin:0 0 14px;
+  .nav-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
   }
-  .void .eyebrow{color:rgba(255,255,255,0.55);}
- 
-  /* ---------- mark / logo ---------- */
-  .mark{width:22px; height:22px; flex-shrink:0;}
-  .mark rect{fill:none; stroke:currentColor; stroke-width:1.4;}
-  .mark line{stroke:currentColor; stroke-width:1.4;}
- 
-  /* ---------- nav ---------- */
-  .nav{
-    position:fixed; top:0; left:0; right:0; z-index:100;
-    display:flex; align-items:center; justify-content:space-between;
-    padding:18px 24px;
-    color:#fff;
-    transition:background .3s ease, padding .3s ease, box-shadow .3s ease;
+  .nav-name {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    padding: 14px 20px 14px 0;
+    margin-right: 8px;
+    border-right: 1px solid rgba(255,255,255,0.18);
+    white-space: nowrap;
+    flex-shrink: 0;
   }
-  .nav.scrolled{
-    background:rgba(14,22,38,0.92);
-    backdrop-filter:blur(8px);
-    padding:12px 24px;
-    box-shadow:0 1px 0 var(--line-dark);
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
   }
-  .brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:#fff;}
-  .brand-name{font-size:16px; font-weight:600;}
-  .nav-links{display:flex; gap:28px; font-size:14.5px;}
-  .nav-links a{text-decoration:none; opacity:0.82; transition:opacity .2s;}
-  .nav-links a:hover{opacity:1;}
-  .nav-toggle{display:none; background:none; border:0; color:#fff; cursor:pointer; padding:6px;}
-  .nav-toggle svg{width:22px; height:22px;}
- 
-  @media (max-width:760px){
-    .nav-links{
-      position:fixed; top:0; right:0; height:100vh; width:min(78vw,300px);
-      background:var(--void); flex-direction:column; gap:0;
-      padding:88px 28px 28px; transform:translateX(100%);
-      transition:transform .35s ease; font-size:17px;
-    }
-    .nav-links a{padding:14px 0; border-bottom:1px solid var(--line-dark); opacity:1;}
-    .nav-links.open{transform:translateX(0);}
-    .nav-toggle{display:block;}
+  .nav-links a {
+    display: block;
+    padding: 14px 13px;
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.72);
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: color .15s, border-color .15s;
   }
- 
-  /* ---------- hero ---------- */
-  .hero{
-    background:var(--void);
-    color:#fff;
-    padding:168px 24px 110px;
-    position:relative;
-    overflow:hidden;
+  .nav-links a:hover, .nav-links a.active {
+    color: #ffffff;
+    border-bottom-color: #7eb8f7;
+    text-decoration: none;
   }
-  .hero::before{
-    content:"";
-    position:absolute; inset:0;
-    background:
-      radial-gradient(60% 50% at 85% 10%, rgba(54,197,192,0.16), transparent 60%),
-      radial-gradient(40% 40% at 8% 90%, rgba(226,163,59,0.12), transparent 60%);
-    pointer-events:none;
+
+  /* page */
+  .page { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* about */
+  .about-section { padding: 52px 0 44px; }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 152px 1fr;
+    gap: 36px;
+    align-items: start;
   }
-  .hero .wrap{position:relative;}
- 
-  .hero-name-wrap{
-    position:relative;
-    margin:0 0 22px;
-    font-size:clamp(36px,6.4vw,64px);
-    font-weight:700;
-    line-height:1.05;
+  .photo-placeholder {
+    width: 152px; height: 175px;
+    border-radius: 4px;
+    background: var(--bg);
+    border: 1px dashed var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11.5px; color: var(--muted); text-align: center;
+    line-height: 1.5; padding: 12px;
   }
-  .hero-name{opacity:1;}
-  .ghost{display:none;}
- 
-  @media (prefers-reduced-motion:no-preference){
-    .hero-name{opacity:0; animation:reveal 0.01s 1.05s forwards;}
-    .ghost{
-      display:block; position:absolute; inset:0;
-      filter:blur(3px); opacity:0.55;
-    }
-    .ghost-a{color:var(--cyan); transform:translate(-7px,-5px); animation:converge 1.05s 0s cubic-bezier(.2,.7,.2,1) forwards;}
-    .ghost-b{color:var(--amber); transform:translate(7px,5px); animation:converge 1.05s .04s cubic-bezier(.2,.7,.2,1) forwards;}
-    .ghost-c{color:#fff; transform:translate(-5px,6px); animation:converge 1.05s .08s cubic-bezier(.2,.7,.2,1) forwards;}
-    .ghost-d{color:var(--cyan); transform:translate(6px,-6px); animation:converge 1.05s .12s cubic-bezier(.2,.7,.2,1) forwards;}
-    @keyframes converge{
-      0%{opacity:0.55; filter:blur(3px);}
-      85%{opacity:0.25; filter:blur(0.5px);}
-      100%{opacity:0; filter:blur(0); transform:translate(0,0);}
-    }
-    @keyframes reveal{ to{opacity:1;} }
+  .about-photo img {
+    width: 152px; height: 175px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 2px solid rgba(255,255,255,0.25);
+    display: block;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
   }
- 
-  .hero-tagline{
-    font-family:'Source Serif 4', serif;
-    font-size:clamp(17px,2vw,21px);
-    max-width:680px;
-    color:rgba(255,255,255,0.86);
-    margin:0 0 28px;
+  .about-name {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    color: var(--ink);
   }
-  .hero-meta{
-    font-family:'JetBrains Mono', monospace;
-    font-size:13px;
-    color:rgba(255,255,255,0.6);
-    display:flex; gap:10px; align-items:center; flex-wrap:wrap;
-    margin-bottom:40px;
+  .about-title {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    line-height: 1.5;
   }
-  .hero-meta .dot{opacity:0.5;}
- 
-  .hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
-  .btn{
-    display:inline-flex; align-items:center; gap:8px;
-    padding:13px 22px; border-radius:3px;
-    font-family:'Space Grotesk', sans-serif; font-size:14.5px; font-weight:600;
-    text-decoration:none; border:1px solid transparent; cursor:pointer;
-    transition:transform .15s ease, background .2s ease, border-color .2s ease;
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    margin-bottom: 10px;
+    list-style: none;
   }
-  .btn:hover{transform:translateY(-1px);}
-  .btn-primary{background:var(--cyan); color:var(--void);}
-  .btn-primary:hover{background:#46d6d1;}
-  .btn-ghost{border-color:rgba(255,255,255,0.3); color:#fff;}
-  .btn-ghost:hover{border-color:rgba(255,255,255,0.7);}
- 
-  /* ---------- generic headings ---------- */
-  h2{font-size:clamp(26px,3.4vw,36px); line-height:1.2; margin:0 0 20px; font-weight:600;}
-  .lede{font-size:18.5px; max-width:680px; color:var(--ink); text-align:justify; text-justify:inter-word;}
- 
-  /* ---------- about ---------- */
-  .skills{
-    display:flex; flex-wrap:wrap; gap:10px;
-    margin-top:32px;
+  .social-links a {
+    font-size: 13.5px;
+    color: var(--mid);
   }
-  .skills li{
-    font-family:'JetBrains Mono', monospace; font-size:13px;
-    padding:8px 14px; border:1px solid var(--line); border-radius:20px;
-    color:var(--slate); background:var(--panel);
+  .social-links a:hover { color: var(--accent); }
+  .about-contact {
+    font-size: 13.5px;
+    color: var(--mid);
+    margin-bottom: 22px;
+    line-height: 1.8;
   }
- 
-  /* ---------- research ---------- */
-  .research{background:var(--panel);}
-  .research-diagram{
-    display:flex; justify-content:center;
-    margin-top:40px;
+  .about-bio p {
+    font-size: 15px;
+    line-height: 1.78;
+    color: var(--ink);
+    margin-bottom: 13px;
+    text-align: justify;
   }
-  .diagram-cap{
-    font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--slate);
-    text-align:center; margin-top:14px;
+  .about-bio p:last-child { margin-bottom: 0; }
+
+  /* sections */
+  section { padding: 36px 0; border-top: 1px solid var(--border); }
+  h2 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--navy);
   }
- 
- 
-  /* ---------- timeline ---------- */
-  .timeline{position:relative; margin-top:40px;}
-  .timeline li{
-    padding:0 0 44px 28px;
-    border-left:1px solid var(--line);
-    position:relative;
+
+  /* updates */
+  .updates-list { list-style: none; }
+  .updates-list li {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 14px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14.5px;
+    line-height: 1.6;
   }
-  .timeline li:last-child{padding-bottom:0;}
-  .timeline li::before{
-    content:""; position:absolute; left:-4.5px; top:4px;
-    width:8px; height:8px; border-radius:50%; background:var(--cyan);
+  .updates-list li:first-child { border-top: 1px solid var(--border); }
+  .update-date { color: var(--muted); font-size: 13px; padding-top: 1px; }
+
+  /* research */
+  .prose p {
+    font-size: 15px;
+    line-height: 1.78;
+    color: var(--ink);
+    margin-bottom: 13px;
+    text-align: justify;
   }
-  .timeline-date{font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--slate); margin:0 0 6px;}
-  .timeline h3{margin:0 0 2px; font-size:20px;}
-  .timeline-org{margin:0 0 14px; color:var(--slate); font-size:15px;}
-  .timeline ul{margin-top:4px;}
-  .timeline ul li{
-    border-left:none; padding:0; margin-bottom:8px; padding-left:0;
-    font-size:15.5px; position:relative;
+  .prose p:last-child { margin-bottom: 0; }
+
+  /* publications */
+  .pub-list { list-style: none; }
+  .pub-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14.5px;
+    line-height: 1.7;
   }
-  .timeline ul li::before{display:none;}
-  .timeline ul li::after{content:"—"; color:var(--slate); margin-right:8px;}
- 
-  /* ---------- education ---------- */
-  .education{background:var(--panel);}
-  .ed-grid{display:grid; gap:24px; margin-top:36px;}
-  .ed-card{
-    background:var(--paper); border:1px solid var(--line); border-radius:6px; padding:26px 28px;
+  .pub-list li:first-child { border-top: 1px solid var(--border); }
+  .pub-title-text { font-weight: 600; color: var(--ink); display: block; margin-bottom: 3px; }
+  .pub-authors { color: var(--mid); display: block; }
+  .pub-venue { color: var(--muted); font-style: italic; display: block; margin-bottom: 5px; }
+  .pub-links-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 5px; }
+  .pub-links-row a {
+    font-size: 12.5px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 2px 10px;
+    color: var(--mid);
+    font-weight: 500;
   }
-  .ed-degree{font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:18px; margin:0 0 4px;}
-  .ed-school{margin:0 0 4px; color:var(--slate);}
-  .ed-meta{font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--slate); margin:0 0 12px;}
-  .ed-thesis{font-size:15px; margin:0; color:var(--ink);}
- 
-  /* ---------- publications ---------- */
-  .pub-list{margin-top:36px;}
-  .pub-list li{padding:24px 0; border-bottom:1px solid var(--line);}
-  .pub-list li:first-child{padding-top:0;}
-  .pub-title{font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:17.5px; margin:0 0 8px;}
-  .pub-cite{font-size:15px; color:var(--slate); margin:0;}
-  .pub-links{margin-top:24px; font-size:15px; color:var(--slate);}
-  .pub-links a{text-decoration:underline; text-decoration-color:var(--line);}
- 
-  /* ---------- certifications + achievements ---------- */
-  .more-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
-  .more-grid h3{font-size:14px; margin:0 0 18px;}
-  .more-grid ul li{
-    padding:12px 0; border-bottom:1px solid var(--line); font-size:15.5px;
+  .pub-links-row a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+  /* experience */
+  .entry-list { list-style: none; }
+  .entry-list > li { padding: 15px 0; border-bottom: 1px solid var(--border); }
+  .entry-list > li:first-child { border-top: 1px solid var(--border); }
+  .entry-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px; }
+  .entry-role { font-weight: 600; font-size: 15px; color: var(--ink); }
+  .entry-date { font-size: 13px; color: var(--muted); white-space: nowrap; }
+  .entry-org { color: var(--mid); font-size: 14px; margin: 3px 0 9px; }
+  .entry-bullets { list-style: disc; padding-left: 18px; font-size: 14px; color: var(--mid); }
+  .entry-bullets li { margin-bottom: 4px; line-height: 1.6; }
+  .entry-note { font-size: 14px; color: var(--mid); margin-top: 4px; }
+
+  /* education */
+  .edu-degree { font-weight: 600; font-size: 15px; color: var(--ink); }
+  .edu-meta { color: var(--mid); font-size: 14px; margin: 3px 0 5px; }
+  .edu-thesis { font-size: 14px; color: var(--mid); font-style: italic; }
+
+  /* reviewer */
+  .reviewer-venue { font-weight: 600; color: var(--ink); display: block; }
+  .reviewer-detail { color: var(--mid); font-size: 13.5px; }
+
+  /* two-col */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
+  .two-col h3 { font-size: 16px; font-weight: 600; margin-bottom: 14px; color: var(--ink); font-family: 'Lora', serif; }
+  .plain-list { list-style: disc; padding-left: 18px; font-size: 14px; color: var(--mid); }
+  .plain-list li { margin-bottom: 7px; line-height: 1.55; }
+
+  /* skills */
+  .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-tag {
+    font-size: 13px; color: var(--mid);
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 3px; padding: 4px 11px;
   }
-  .more-grid ul li:last-child{border-bottom:none;}
-  @media (max-width:760px){.more-grid{grid-template-columns:1fr; gap:36px;}}
- 
-  /* ---------- footer / contact ---------- */
-  .contact{background:var(--void); color:#fff;}
-  .contact h2{max-width:620px; color:#fff;}
-  .contact-grid{
-    display:flex; flex-wrap:wrap; gap:28px;
-    margin:36px 0 56px;
-    font-family:'JetBrains Mono', monospace; font-size:14px;
+
+  /* footer */
+  footer {
+    border-top: none;
+    background: var(--navy);
+    padding: 32px 24px 44px;
+    margin: 0 -24px;
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.55);
+    border-radius: 8px 8px 0 0;
   }
-  .contact-grid a{text-decoration:none; border-bottom:1px solid var(--line-dark); padding-bottom:4px;}
-  .contact-grid a:hover{border-color:var(--cyan);}
-  .contact-grid span{color:rgba(255,255,255,0.55);}
-  .footer-note{
-    font-family:'JetBrains Mono', monospace; font-size:12.5px;
-    color:rgba(255,255,255,0.4); border-top:1px solid var(--line-dark); padding-top:24px;
+  .footer-col a { color: rgba(255,255,255,0.75) !important; }
+  .footer-col a:hover { color: #7eb8f7 !important; }
+  .footer-col p { margin-bottom: 5px; }
+  .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
+  .footer-col a { color: var(--mid); }
+  .footer-col a:hover { color: var(--accent); }
+  .footer-col p { margin-bottom: 4px; }
+
+  /* responsive */
+  @media (max-width: 640px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .updates-list li { grid-template-columns: 1fr; gap: 2px; }
+    .two-col { grid-template-columns: 1fr; gap: 28px; }
+    .nav-name { display: none; }
+    .nav-links a { padding: 14px 10px; font-size: 13px; }
   }
 </style>
 </head>
 <body>
- 
-<a class="skip-link" href="#main">Skip to content</a>
- 
-<header class="nav" id="nav">
-  <a class="brand" href="#top">
-    <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
-      <rect x="1" y="1" width="10" height="10"/>
-      <rect x="13" y="1" width="10" height="10"/>
-      <rect x="1" y="13" width="10" height="10"/>
-      <rect x="13" y="13" width="10" height="10"/>
-      <line x1="3" y1="6" x2="9" y2="6"/>
-      <line x1="18" y1="3" x2="18" y2="9"/>
-      <line x1="3" y1="15" x2="9" y2="19"/>
-      <line x1="15" y1="15" x2="21" y2="19"/>
-    </svg>
-    <span class="brand-name">Neethu S. Ravi</span>
-  </a>
-  <nav class="nav-links" id="navLinks">
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#future-research">Future Research</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#publications">Publications</a>
-    <a href="#service">Reviewer</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-  </button>
-</header>
- 
-<main id="main">
- 
-  <section class="hero" id="top">
-    <div class="wrap">
-      <p class="eyebrow">PhD · Electronics &amp; Communication Engineering</p>
-      <h1 class="hero-name-wrap">
-        <span class="ghost ghost-a" aria-hidden="true">Dr. Neethu S. Ravi</span>
-        <span class="ghost ghost-b" aria-hidden="true">Dr. Neethu S. Ravi</span>
-        <span class="ghost ghost-c" aria-hidden="true">Dr. Neethu S. Ravi</span>
-        <span class="ghost ghost-d" aria-hidden="true">Dr. Neethu S. Ravi</span>
-        <span class="hero-name">Dr. Neethu S. Ravi</span>
-      </h1>
-      <p class="hero-tagline">Computational imaging researcher specializing in polarimetric sensing, image reconstruction, and AI-driven imaging systems, developing advanced algorithms at the intersection of imaging physics, signal processing, and artificial intelligence, with a passion for translating fundamental research into impactful real-world applications.</p>
-      <p class="hero-meta">
-        <span>Abu Dhabi, UAE</span><span class="dot">•</span>
-        <span>7+ years in computational imaging</span><span class="dot">•</span>
-        <span>MATLAB &amp; Python</span>
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#publications">View publications</a>
-        <a class="btn btn-ghost" href="mailto:drneethusravi@gmail.com">Get in touch</a>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <span class="nav-name">Dr. Neethu S. Ravi</span>
+    <ul class="nav-links">
+      <li><a href="#about" class="active">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#future">Future Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#reviewer">Reviewer</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- ABOUT -->
+  <div class="about-section" id="about">
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="data:image/jpeg;base64,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" alt="Dr. Neethu S. Ravi">
       </div>
-    </div>
-  </section>
- 
-  <section id="about">
-    <div class="wrap">
-      <p class="eyebrow">About</p>
-      <p class="lede">I am a researcher in computational imaging and polarimetric imaging with over seven years of experience in developing image reconstruction and resolution enhancement algorithms for advanced imaging systems. My research focuses on bridging signal processing, imaging physics, and computational methods to address challenges in polarization-sensitive imaging, image restoration, and information extraction from complex visual data.</p>
-      <p class="lede">During my doctoral research at Amrita Vishwa Vidyapeetham, I developed novel digital super-resolution techniques for division-of-focal-plane polarimeters based on the Generalized Sampling Theorem, enabling improved spatial resolution without modifications to imaging hardware. My work has resulted in publications in leading journals including IEEE Signal Processing Letters and the Journal of the Optical Society of America B, and has been conducted in collaboration with researchers at the University of Dayton, USA.</p>
-      <p class="lede">My broader interests lie in computational imaging, inverse problems, machine learning for imaging systems, and the development of intelligent imaging solutions that combine physical modeling with data-driven approaches. I am particularly interested in translating fundamental research into practical technologies for scientific, industrial, and real-world imaging applications.</p>
-      <ul class="skills">
-        <li>Polarimetric Imaging</li>
-        <li>Computational Imaging</li>
-        <li>Super-Resolution</li>
-        <li>Applied Computer Vision</li>
-        <li>Machine Learning</li>
-        <li>Fourier Optics</li>
-        <li>Algorithm Design</li>
-        <li>MATLAB</li>
-        <li>Python</li>
-        <li>Data Analysis</li>
-        <li>Research &amp; Development</li>
-        <li>Project Leadership</li>
-      </ul>
-    </div>
-  </section>
- 
-  <section class="research" id="research">
-    <div class="wrap">
-      <p class="eyebrow">Research Focus</p>
-      <h2>Digital Super-Resolution</h2>
-      <p class="lede">Polarimetric imaging provides information beyond conventional intensity imaging by measuring the polarization state of light, enabling enhanced characterization of materials, surfaces, and scenes. This additional information has applications in remote sensing, surveillance, biomedical imaging, industrial inspection, and autonomous sensing. However, many polarimetric imaging systems suffer from reduced spatial resolution due to the way polarization information is acquired at the sensor level.</p>
-      <p class="lede">My research focuses on developing computational imaging techniques to overcome these limitations and improve the quality of polarimetric imagery. In particular, I developed a novel Generalized Sampling Theorem (GST)-based digital super-resolution framework that reconstructs high-resolution images from multiple low-resolution observations. The work combines signal processing theory, mathematical modeling, and image reconstruction techniques to recover spatial detail while preserving polarization information.</p>
-      <p class="lede">Through this research, I aim to advance the capabilities of next-generation imaging systems by integrating computational methods with imaging physics, enabling improved image quality and information extraction without requiring modifications to the underlying hardware.</p>
-      <div class="research-diagram">
-        <div>
-          <svg viewBox="0 0 460 200" role="img" aria-label="Diagram: four polarization-angle channels at 0, 45, 90 and 135 degrees combine into one higher-resolution reconstructed image">
-            <defs>
-              <pattern id="h0" width="10" height="10" patternUnits="userSpaceOnUse">
-                <line x1="0" y1="5" x2="10" y2="5" stroke="#1B2233" stroke-opacity="0.4" stroke-width="1.6"/>
-              </pattern>
-              <pattern id="h45" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-                <line x1="0" y1="5" x2="10" y2="5" stroke="#1B2233" stroke-opacity="0.4" stroke-width="1.6"/>
-              </pattern>
-              <pattern id="h90" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(90)">
-                <line x1="0" y1="5" x2="10" y2="5" stroke="#1B2233" stroke-opacity="0.4" stroke-width="1.6"/>
-              </pattern>
-              <pattern id="h135" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(135)">
-                <line x1="0" y1="5" x2="10" y2="5" stroke="#1B2233" stroke-opacity="0.4" stroke-width="1.6"/>
-              </pattern>
-              <pattern id="hMerged" width="6" height="6" patternUnits="userSpaceOnUse">
-                <line x1="0" y1="3" x2="6" y2="3" stroke="#36C5C0" stroke-width="1.3"/>
-                <line x1="3" y1="0" x2="3" y2="6" stroke="#36C5C0" stroke-width="1.3"/>
-              </pattern>
-            </defs>
- 
-            <g>
-              <rect x="0" y="0" width="68" height="68" rx="5" fill="#FAF8F3" stroke="#1B2233" stroke-opacity="0.18"/>
-              <rect x="4" y="4" width="60" height="60" rx="3" fill="url(#h0)"/>
-              <text x="34" y="86" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#5B6478">0°</text>
-            </g>
-            <g transform="translate(80,0)">
-              <rect x="0" y="0" width="68" height="68" rx="5" fill="#FAF8F3" stroke="#1B2233" stroke-opacity="0.18"/>
-              <rect x="4" y="4" width="60" height="60" rx="3" fill="url(#h45)"/>
-              <text x="34" y="86" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#5B6478">45°</text>
-            </g>
-            <g transform="translate(0,96)">
-              <rect x="0" y="0" width="68" height="68" rx="5" fill="#FAF8F3" stroke="#1B2233" stroke-opacity="0.18"/>
-              <rect x="4" y="4" width="60" height="60" rx="3" fill="url(#h90)"/>
-              <text x="34" y="86" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#5B6478">90°</text>
-            </g>
-            <g transform="translate(80,96)">
-              <rect x="0" y="0" width="68" height="68" rx="5" fill="#FAF8F3" stroke="#1B2233" stroke-opacity="0.18"/>
-              <rect x="4" y="4" width="60" height="60" rx="3" fill="url(#h135)"/>
-              <text x="34" y="86" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#5B6478">135°</text>
-            </g>
- 
-            <path d="M168 96 L208 96" stroke="#5B6478" stroke-width="1.5" marker-end="url(#arrow)"/>
-            <defs>
-              <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-                <path d="M0,0 L8,4 L0,8 Z" fill="#5B6478"/>
-              </marker>
-            </defs>
- 
-            <g transform="translate(228,18)">
-              <rect x="0" y="0" width="160" height="160" rx="6" fill="#FAF8F3" stroke="#36C5C0" stroke-opacity="0.6"/>
-              <rect x="6" y="6" width="148" height="148" rx="3" fill="url(#hMerged)"/>
-              <text x="80" y="178" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#36C5C0">reconstructed</text>
-            </g>
-          </svg>
-          <p class="diagram-cap">Four polarization channels (0°, 45°, 90°, 135°) reconstructed into one higher-resolution image</p>
+      <div>
+        <h1 class="about-name">Dr. Neethu S. Ravi</h1>
+        <p class="about-title">
+          PhD Researcher · Computational &amp; Polarimetric Imaging<br>
+          Abu Dhabi, UAE
+        </p>
+        <ul class="social-links">
+          <li><a href="https://scholar.google.com/citations?user=TRSeAskAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+          <li><a href="https://www.linkedin.com/in/neethusravi" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://orcid.org/0009-0003-7696-9520" target="_blank" rel="noopener">ORCID</a></li>
+          <li><a href="https://www.scopus.com/authid/detail.uri?authorId=59351120100" target="_blank" rel="noopener">Scopus</a></li>
+          <li><a href="https://github.com/DrNeethuSRavi" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+        <div class="about-contact">
+          drneethusravi@gmail.com &nbsp;|&nbsp; nichusravi@gmail.com<br>
+          +971 52 832 3445
+        </div>
+        <div class="about-bio">
+          <p>I am a researcher in computational imaging and polarimetric imaging with over seven years of experience in developing image reconstruction and resolution enhancement algorithms for advanced imaging systems. My research focuses on bridging signal processing, imaging physics, and computational methods to address challenges in polarization-sensitive imaging, image restoration, and information extraction from complex visual data.</p>
+          <p>During my doctoral research at Amrita Vishwa Vidyapeetham, I developed novel digital super-resolution techniques for division-of-focal-plane polarimeters based on the Generalized Sampling Theorem, enabling improved spatial resolution without modifications to imaging hardware. My work has resulted in publications in leading journals including IEEE Signal Processing Letters and the Journal of the Optical Society of America B, and has been conducted in collaboration with researchers at the University of Dayton, USA.</p>
+          <p>My broader interests lie in computational imaging, inverse problems, machine learning for imaging systems, and the development of intelligent imaging solutions that combine physical modeling with data-driven approaches. I am particularly interested in translating fundamental research into practical technologies for scientific, industrial, and real-world imaging applications.</p>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- UPDATES -->
+  <section id="updates">
+    <h2>Updates</h2>
+    <ul class="updates-list">
+      <li>
+        <span class="update-date">July 2026</span>
+        <span>Certified reviewer for the 23rd IEEE International Symposium on Biomedical Imaging (ISBI) 2026.</span>
+      </li>
+      <li>
+        <span class="update-date">2025</span>
+        <span>Awarded the <strong>Ph.D. Scholars Fellowship 2025</strong> by Amrita Scholarships &amp; Fellowships for International Education &amp; Research.</span>
+      </li>
+      <li>
+        <span class="update-date">Jan 2025</span>
+        <span>Paper published in <em>Journal of the Optical Society of America B</em>, 42(1), 7–17. [<a href="https://opg.optica.org/josab/abstract.cfm?uri=josab-42-1-7" target="_blank" rel="noopener">Paper</a>]</span>
+      </li>
+      <li>
+        <span class="update-date">Sep 2024</span>
+        <span>Paper published in <em>IEEE Signal Processing Letters</em>, 31, 2700–2704. [<a href="https://ieeexplore.ieee.org/document/10648618" target="_blank" rel="noopener">Paper</a>]</span>
+      </li>
+      <li>
+        <span class="update-date">2025</span>
+        <span>Certified reviewer for OSA / Optica Publishing Group journals.</span>
+      </li>
+      <li>
+        <span class="update-date">2024</span>
+        <span>Certified reviewer for the 22nd IEEE International Symposium on Biomedical Imaging (ISBI) 2025.</span>
+      </li>
+    </ul>
   </section>
- 
-  <section id="future-research">
-    <div class="wrap">
-      <p class="eyebrow">Future Research</p>
-      <h2>Future Research</h2>
-      <p class="lede">My future research aims to advance the capabilities of next-generation imaging systems through the integration of computational imaging, intelligent reconstruction methods, and emerging data-driven technologies. Building upon my work in polarimetric imaging and image reconstruction, I am interested in exploring approaches that improve image quality, information recovery, and decision-making in challenging imaging environments.</p>
-      <p class="lede">A key objective is to develop scalable and adaptable imaging frameworks that combine physical understanding of image formation with modern computational techniques. These efforts are directed toward creating robust solutions for scientific imaging, autonomous sensing, remote observation, industrial inspection, and other applications where extracting reliable information from limited or degraded measurements is critical.</p>
-      <p class="lede">Through interdisciplinary collaboration, I seek to contribute to the development of advanced imaging technologies that are both theoretically grounded and practically deployable across a wide range of real-world scenarios.</p>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <h2>Research</h2>
+    <div class="prose">
+      <p>Polarimetric imaging provides information beyond conventional intensity imaging by measuring the polarization state of light, enabling enhanced characterization of materials, surfaces, and scenes. This additional information has applications in remote sensing, surveillance, biomedical imaging, industrial inspection, and autonomous sensing. However, many polarimetric imaging systems suffer from reduced spatial resolution due to the way polarization information is acquired at the sensor level.</p>
+      <p>My research focuses on developing computational imaging techniques to overcome these limitations and improve the quality of polarimetric imagery. In particular, I developed a novel Generalized Sampling Theorem (GST)-based digital super-resolution framework that reconstructs high-resolution images from multiple low-resolution observations. The work combines signal processing theory, mathematical modeling, and image reconstruction techniques to recover spatial detail while preserving polarization information.</p>
+      <p>Through this research, I aim to advance the capabilities of next-generation imaging systems by integrating computational methods with imaging physics, enabling improved image quality and information extraction without requiring modifications to the underlying hardware.</p>
     </div>
   </section>
- 
-  <section id="experience">
-    <div class="wrap">
-      <p class="eyebrow">Experience</p>
-      <h2>Professional Experience</h2>
-      <ol class="timeline">
-        <li>
-          <p class="timeline-date mono">2021 — 2025</p>
-          <h3>Research Assistant</h3>
-          <p class="timeline-org">Amrita Vishwa Vidyapeetham</p>
-          <ul>
-            <li>Led applied research on digital super-resolution algorithms for polarimetric imaging</li>
-            <li>Developed AI-based computer vision models for RGB microgrid polarimeter imagery</li>
-            <li>Collaborated with the University of Dayton, Ohio, on microgrid polarimeter imaging projects</li>
-            <li>Mentored students and supported teaching-assistantship programs</li>
-            <li>Published in IEEE Signal Processing Letters and the Journal of the Optical Society of America B</li>
-          </ul>
-        </li> 
-        <li>
-          <p class="timeline-date mono">2018 — 2022</p>
-          <h3>Faculty Assistant</h3>
-          <p class="timeline-org">Amrita Vishwa Vidyapeetham</p>
-          <ul>
-            <li>Taught image and signal processing coursework for undergraduate programs</li>
-            <li>Supported project-based learning integrating AI and MATLAB-driven modeling</li>
-          </ul>
-        </li>
-        <li>
-          <p class="timeline-date mono">2017 — 2018</p>
-          <h3>Faculty Assistant — AICTE Postgraduate Program</h3>
-          <ul>
-            <li>Assisted postgraduate labs and coursework focused on machine learning applications</li>
-          </ul>
-        </li>
-      </ol>
+
+  <!-- FUTURE RESEARCH -->
+  <section id="future">
+    <h2>Future Research</h2>
+    <div class="prose">
+      <p>My future research aims to advance the capabilities of next-generation imaging systems through the integration of computational imaging, intelligent reconstruction methods, and emerging data-driven technologies. Building upon my work in polarimetric imaging and image reconstruction, I am interested in exploring approaches that improve image quality, information recovery, and decision-making in challenging imaging environments.</p>
+      <p>A key objective is to develop scalable and adaptable imaging frameworks that combine physical understanding of image formation with modern computational techniques. These efforts are directed toward creating robust solutions for scientific imaging, autonomous sensing, remote observation, industrial inspection, and other applications where extracting reliable information from limited or degraded measurements is critical.</p>
+      <p>Through interdisciplinary collaboration, I seek to contribute to the development of advanced imaging technologies that are both theoretically grounded and practically deployable across a wide range of real-world scenarios.</p>
     </div>
   </section>
- 
-  <section class="education" id="education">
-    <div class="wrap">
-      <p class="eyebrow">Education</p>
-      <h2>Education</h2>
-      <div class="ed-grid">
-        <article class="ed-card">
-          <p class="ed-degree">Ph.D., Electronics &amp; Communication Engineering</p>
-          <p class="ed-school">Amrita Vishwa Vidyapeetham, India</p>
-          <p class="ed-meta mono">2018 – 2025 · CGPA 8.76</p>
-          <p class="ed-thesis">Thesis: A novel method for resolution enhancement in division-of-focal-plane polarimetry, using a generalized sampling theorem-based digital super-resolution approach.</p>
-        </article>
-        <article class="ed-card">
-          <p class="ed-degree">M.Tech, Electronics &amp; Communication Engineering (Signal Processing)</p>
-          <p class="ed-school">University of Kerala, India</p>
-          <p class="ed-meta mono">2014 – 2016 · CGPA 9.08 · University rank holder</p>
-          <p class="ed-thesis">Thesis: An improved method to detect common cardiac disorders from ECG signals using artificial neural networks and fuzzy logic.</p>
-        </article>
-        <article class="ed-card">
-          <p class="ed-degree">B.Tech, Electronics &amp; Communication Engineering</p>
-          <p class="ed-school">University of Kerala, India</p>
-          <p class="ed-meta mono">2010 – 2014 · CGPA 7.51</p>
-        </article>
-      </div>
-    </div>
-  </section>
- 
+
+  <!-- PUBLICATIONS -->
   <section id="publications">
-    <div class="wrap">
-      <p class="eyebrow">Publications</p>
-      <h2>Publications</h2>
-      <ol class="pub-list">
-        <li>
-          <p class="pub-title">Comparative study of generalized-sampling-theorem-based digital super-resolution for 2D data</p>
-          <p class="pub-cite">Neethu S. Ravi, Rakesh Kumar, Bradley M. Ratliff — Journal of the Optical Society of America B, 42(1), 7–17, 2024</p>
-        </li>
-        <li>
-          <p class="pub-title">A digital super-resolution method with minimal sensitivity to shift estimation error</p>
-          <p class="pub-cite">Neethu S. Ravi, Rakesh Kumar, Bradley M. Ratliff — IEEE Signal Processing Letters, 31, 2700–2704, 2024</p>
-        </li>
-        <li>
-          <p class="pub-title">A modular approach to finer classification of ECG signals</p>
-          <p class="pub-cite">Neethu S. Ravi, P. Thomas — International Journal of Advanced Research in Electrical, Electronics and Instrumentation Engineering, 2016</p>
-        </li>
-        <li>
-          <p class="pub-title">An improved method to detect common cardiac disorders from ECG signals using artificial neural network and fuzzy logic</p>
-          <p class="pub-cite">Neethu S. Ravi, P. Thomas — IJRECE, 4(3), 24–28, 2016</p>
-        </li>
-        <li>
-          <p class="pub-title">Improved method to detect common cardiac disorders from ECG signals using ANN and fuzzy logic</p>
-          <p class="pub-cite">Neethu S. Ravi, P. Thomas — International Journal of Advanced Research in Electrical, Electronics and Instrumentation Engineering, 2016</p>
-        </li>
-      </ol>
-      <p class="pub-links">Full record on <a href="https://scholar.google.com/citations?user=TRSeAskAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> · ORCID <span class="mono">0009-0003-7696-9520</span> · Scopus ID <span class="mono">59351120100</span></p>
+    <h2>Publications</h2>
+    <ul class="pub-list">
+      <li>
+        <span class="pub-title-text">Comparative study of generalized-sampling-theorem-based digital super-resolution for 2D data</span>
+        <span class="pub-authors"><strong>N. S. Ravi</strong>, R. Kumar, B. M. Ratliff</span>
+        <span class="pub-venue">Journal of the Optical Society of America B, 42(1), 7–17, 2025</span>
+        <div class="pub-links-row">
+          <a href="https://opg.optica.org/josab/abstract.cfm?uri=josab-42-1-7" target="_blank" rel="noopener">Paper</a>
+          <a href="https://scholar.google.com/citations?user=TRSeAskAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+        </div>
+      </li>
+      <li>
+        <span class="pub-title-text">A digital super-resolution method with minimal sensitivity to shift estimation error</span>
+        <span class="pub-authors"><strong>N. S. Ravi</strong>, R. Kumar, B. M. Ratliff</span>
+        <span class="pub-venue">IEEE Signal Processing Letters, 31, 2700–2704, 2024</span>
+        <div class="pub-links-row">
+          <a href="https://ieeexplore.ieee.org/document/10648618" target="_blank" rel="noopener">Paper</a>
+          <a href="https://scholar.google.com/citations?user=TRSeAskAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+        </div>
+      </li>
+      <li>
+        <span class="pub-title-text">A modular approach to finer classification of ECG signals</span>
+        <span class="pub-authors"><strong>N. S. Ravi</strong>, P. Thomas</span>
+        <span class="pub-venue">International Journal of Advanced Research in Electrical, Electronics and Instrumentation Engineering, 2016</span>
+        <div class="pub-links-row">
+          <a href="https://d1wqtxts1xzle7.cloudfront.net/132978794/Paper2-libre.pdf?1780474793=&response-content-disposition=inline%3B+filename%3DA_Modular_Approach_to_Finer_Classificati.pdf&Expires=1783941468&Signature=PqR2eFo3blBA77WGz~T58TRqNfHYh0DR9pEErd5spDd8V48DgMh-OhRFcZfGrNUElmOFao~78V8BV2DBfqluCWZd1zHxFeM3aNkONgzX6Th4H9eyHXuqc22Rjjs9VA4WFEwoQhnXdueMfqRexyB5kKZzL8-Wnl4YRtOPclOFPFaUjD2kiYwj8Wiu7UzjmNiPv-b9OHpp-9gUQfo7ipreEFIAhSKC5uZpq9q3TH5XqFtm17HxKIDbaBw2QePll8~-kH1Lmfo4f-CXNOSUbtVjugscUWcUMECwiphzXuHmDywSshZ1p3bjgV2RUcnwNNMoEpv5S7dPCuuktsaAinKD~g__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA" target="_blank" rel="noopener">Paper</a>
+        </div>
+      </li>
+      <li>
+        <span class="pub-title-text">An improved method to detect common cardiac disorders from ECG signals using artificial neural network and fuzzy logic</span>
+        <span class="pub-authors"><strong>N. S. Ravi</strong>, P. Thomas</span>
+        <span class="pub-venue">IJRECE, 4(3), 24–28, 2016</span>
+        <div class="pub-links-row">
+          <a href="https://d1wqtxts1xzle7.cloudfront.net/132496385/Paper1-libre.pdf?1776406853=&response-content-disposition=inline%3B+filename%3DAn_Improved_Method_to_Detect_Common_Card.pdf&Expires=1783941368&Signature=KtOjninPyrUrV2sSnC4qVENVUFs~MhHpXKIaNCCCtDvcGWxmB4hgIiC2ZZ~Xh5mXmM6VkrfUAf4NeeEVcNxTxtHPM407bCzBfgn~YM50aiUPFVGvOsAxFnYmA6N10RF1MtXliCLoQ0Ls3NiFUkDJTV6wMW0Fs2criE7avWj63Ye1C9-QnKKOaSvBrY7OHorfHs3BjyQZ2sb9X4U5bdQ8vwqwF8NWr5IZKfaTn9mJ8SWd3r8wDDTwMtfSEDJ1ugINjMeGClLnZzk6vqJmkTiB7S77kptSdut0gt-FbMVnuApaLJaRXb1nDbIdJ1iayKk7BtEyBSMx~qru3U-GilbVgg__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA" target="_blank" rel="noopener">Paper</a>
+        </div>
+      </li>
+      <li>
+        <span class="pub-title-text">Improved method to detect common cardiac disorders from ECG signals using ANN and fuzzy logic</span>
+        <span class="pub-authors"><strong>N. S. Ravi</strong>, P. Thomas</span>
+        <span class="pub-venue">International Journal of Advanced Research in Electrical, Electronics and Instrumentation Engineering, 2016</span>
+        <div class="pub-links-row">
+          <a href="https://www.ijareeie.com/upload/2016/september/61_Improved.pdf" target="_blank" rel="noopener">Paper</a>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <ul class="entry-list">
+      <li>
+        <div class="entry-header">
+          <span class="entry-role">Research Assistant</span>
+          <span class="entry-date">2021 – 2025</span>
+        </div>
+        <p class="entry-org">Amrita Vishwa Vidyapeetham, India</p>
+        <ul class="entry-bullets">
+          <li>Led applied research on digital super-resolution algorithms for polarimetric imaging.</li>
+          <li>Developed AI-based computer vision models for RGB microgrid polarimeter imagery.</li>
+          <li>Collaborated with the University of Dayton, Ohio, on microgrid polarimeter imaging projects.</li>
+          <li>Mentored students and supported teaching-assistantship programs.</li>
+          <li>Published in IEEE Signal Processing Letters and the Journal of the Optical Society of America B.</li>
+        </ul>
+      </li>
+      <li>
+        <div class="entry-header">
+          <span class="entry-role">Faculty Assistant</span>
+          <span class="entry-date">2018 – 2022</span>
+        </div>
+        <p class="entry-org">Amrita Vishwa Vidyapeetham, India</p>
+        <ul class="entry-bullets">
+          <li>Conducted image and signal processing coursework for undergraduate programs.</li>
+          <li>Supported project-based learning integrating AI and MATLAB-driven modeling.</li>
+        </ul>
+      </li>
+      <li>
+        <div class="entry-header">
+          <span class="entry-role">Faculty Assistant — AICTE Postgraduate Program</span>
+          <span class="entry-date">2017 – 2018</span>
+        </div>
+        <ul class="entry-bullets">
+          <li>Assisted in postgraduate labs and coursework focused on machine learning applications.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2>Education</h2>
+    <ul class="entry-list">
+      <li>
+        <div class="entry-header">
+          <span class="edu-degree">Ph.D., Electronics &amp; Communication Engineering</span>
+          <span class="entry-date">2018 – 2025</span>
+        </div>
+        <p class="edu-meta">Amrita Vishwa Vidyapeetham, India &nbsp;·&nbsp; CGPA 8.76</p>
+        <p class="edu-thesis">Thesis: A novel method for resolution enhancement in division-of-focal-plane polarimetry using a generalized sampling theorem-based digital super-resolution approach.</p>
+      </li>
+      <li>
+        <div class="entry-header">
+          <span class="edu-degree">M.Tech., Electronics &amp; Communication Engineering (Signal Processing)</span>
+          <span class="entry-date">2014 – 2016</span>
+        </div>
+        <p class="edu-meta">University of Kerala, India &nbsp;·&nbsp; CGPA 9.08 &nbsp;·&nbsp; University Rank Holder</p>
+        <p class="edu-thesis">Thesis: An improved method to detect common cardiac disorders from ECG signals using artificial neural networks and fuzzy logic.</p>
+      </li>
+      <li>
+        <div class="entry-header">
+          <span class="edu-degree">B.Tech., Electronics &amp; Communication Engineering</span>
+          <span class="entry-date">2010 – 2014</span>
+        </div>
+        <p class="edu-meta">University of Kerala, India &nbsp;·&nbsp; CGPA 7.51</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- REVIEWER -->
+  <section id="reviewer">
+    <h2>Professional Service — Reviewer</h2>
+    <ul class="entry-list">
+      <li>
+        <span class="reviewer-venue">IEEE International Symposium on Biomedical Imaging (ISBI)</span>
+        <span class="reviewer-detail">22nd ISBI 2025 &amp; 23rd ISBI 2026 — certified by EDAS Conference Services / IEEE Signal Processing Society</span>
+      </li>
+      <li>
+        <span class="reviewer-venue">Optica Publishing Group (OSA) Journals</span>
+        <span class="reviewer-detail">Certified reviewer for publications of the Optical Society of America (OSA / Optica)</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- KEY SKILLS -->
+  <section id="skills">
+    <h2>Key Skills</h2>
+    <div class="skills-grid">
+      <span class="skill-tag">Polarimetric Imaging</span>
+      <span class="skill-tag">Computational Imaging</span>
+      <span class="skill-tag">Digital Super-Resolution</span>
+      <span class="skill-tag">Applied Computer Vision</span>
+      <span class="skill-tag">Machine Learning</span>
+      <span class="skill-tag">AI-based Image Processing</span>
+      <span class="skill-tag">Algorithm Design</span>
+      <span class="skill-tag">Fourier Optics</span>
+      <span class="skill-tag">Inverse Problems</span>
+      <span class="skill-tag">MATLAB</span>
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">Data Analysis</span>
+      <span class="skill-tag">Research &amp; Development</span>
+      <span class="skill-tag">Project Leadership</span>
+      <span class="skill-tag">Academic Collaboration</span>
     </div>
   </section>
- 
-  <section id="service">
-    <div class="wrap">
-      <p class="eyebrow">Professional Service</p>
-      <h2>Reviewer</h2>
-      <ol class="timeline">
-        <li>
-          <p class="timeline-date mono">2025 – 2026</p>
-          <h3>IEEE International Symposium on Biomedical Imaging (ISBI)</h3>
-          <p class="timeline-org">IEEE Signal Processing Society</p>
-          <p style="font-size:15.5px; margin:0;">Certified reviewer for the 22nd ISBI 2025 and 23rd ISBI 2026 — certified by EDAS Conference Services.</p>
-        </li>
-        <li>
-          <p class="timeline-date mono">Ongoing</p>
-          <h3>Optica Publishing Group (OSA) Journals</h3>
-          <p class="timeline-org">Optica Publishing Group</p>
-          <p style="font-size:15.5px; margin:0;">Certified reviewer for publications of the Optical Society of America (OSA / Optica).</p>
-        </li>
-      </ol>
-    </div>
-  </section>
- 
+
+  <!-- CERTIFICATIONS & ACHIEVEMENTS -->
   <section id="more">
-    <div class="wrap more-grid">
+    <div class="two-col">
       <div>
-        <p class="eyebrow">Certifications</p>
-        <ul>
+        <h3>Certifications</h3>
+        <ul class="plain-list">
           <li>British Council English Score — Core Skills Test, B2 Upper Intermediate (IELTS Band 6.5–7)</li>
           <li>Introduction to Artificial Intelligence — Coursera</li>
           <li>Machine Learning Onramp — MathWorks Training Services</li>
@@ -563,51 +556,59 @@ Index · HTML
         </ul>
       </div>
       <div>
-        <p class="eyebrow">Achievements</p>
-        <ul>
+        <h3>Achievements</h3>
+        <ul class="plain-list">
           <li>Ph.D. Scholars Fellowship 2025 — Amrita Scholarships &amp; Fellowships for International Education &amp; Research</li>
           <li>University Rank Holder, M.Tech Signal Processing Program</li>
-          <li>Appreciation for M.Tech project presentation during NAAC accreditation visit</li>
+          <li>Appreciation for M.Tech project presentation during NAAC Accreditation Visit</li>
         </ul>
       </div>
     </div>
   </section>
- 
-</main>
- 
-<footer class="contact" id="contact">
-  <div class="wrap">
-    <p class="eyebrow">Contact</p>
-    <h2>Let's talk about imaging, algorithms, or where they meet industry.</h2>
-    <div class="contact-grid">
-      <a href="mailto:drneethusravi@gmail.com">drneethusravi@gmail.com</a>
-      <a href="tel:+971528323445">+971 52 832 3445</a>
-      <a href="https://www.linkedin.com/in/neethusravi" target="_blank" rel="noopener">LinkedIn</a>
-      <span>Abu Dhabi, UAE</span>
+
+</div>
+
+<!-- FOOTER -->
+<div class="page">
+  <footer id="contact">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <p><strong style="color:#ffffff; font-family:'Lora',serif;">Dr. Neethu S. Ravi</strong></p>
+        <p><a href="mailto:drneethusravi@gmail.com">drneethusravi@gmail.com</a></p>
+        <p><a href="mailto:nichusravi@gmail.com">nichusravi@gmail.com</a></p>
+        <p>+971 52 832 3445</p>
+        <p>Abu Dhabi, UAE</p>
+      </div>
+      <div class="footer-col">
+        <p><a href="https://scholar.google.com/citations?user=TRSeAskAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></p>
+        <p><a href="https://www.linkedin.com/in/neethusravi" target="_blank" rel="noopener">LinkedIn</a></p>
+        <p><a href="https://orcid.org/0009-0003-7696-9520" target="_blank" rel="noopener">ORCID</a></p>
+        <p><a href="https://www.scopus.com/authid/detail.uri?authorId=59351120100" target="_blank" rel="noopener">Scopus</a></p>
+        <p><a href="https://github.com/DrNeethuSRavi" target="_blank" rel="noopener">GitHub</a></p>
+      </div>
+      <div class="footer-col" style="font-size:12.5px;">
+        <p>Nationality: Indian</p>
+        <p>Languages: English, Hindi, Malayalam</p>
+        <p style="margin-top:10px;">© 2026 Dr. Neethu S. Ravi</p>
+        <p><a href="https://drneethusravi.github.io">drneethusravi.github.io</a></p>
+      </div>
     </div>
-    <p class="footer-note">© 2026 Neethu S. Ravi.</p>
-  </div>
-</footer>
- 
+  </footer>
+</div>
+
 <script>
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 12);
-  }, { passive: true });
- 
-  const toggle = document.getElementById('navToggle');
-  const links = document.getElementById('navLinks');
-  toggle.addEventListener('click', () => {
-    const open = links.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open);
-  });
-  links.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      links.classList.remove('open');
-      toggle.setAttribute('aria-expanded', false);
+  const sections = document.querySelectorAll('section[id], div[id="about"]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
     });
-  });
+  }, { rootMargin: '-35% 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
 </script>
- 
 </body>
 </html>
